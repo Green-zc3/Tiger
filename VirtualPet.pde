@@ -1,27 +1,4 @@
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
 
-public void setup() {
-  size(400, 400);
-  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
-}
-
-
-public void draw(){
-  size(400,400);
-  
-   
-  background(224,250,159);
-  int y = arduino.analogRead(5);
-  int offset = 130-y;
-  if (y<100)
-  y=0;
-  System.out.println(offset);
-  
-   
-   translate(0,offset*-1);
-   
    fill(216,121,4);
    ellipse(140,280,90,30);
   
@@ -92,8 +69,3 @@ public void draw(){
   
   fill(0,0,0);
   ellipse(200,217,12,9);
-  
-  translate(0,-100);
-
-  }
-  
